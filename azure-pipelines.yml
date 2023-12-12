@@ -5,21 +5,23 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
+  azureSubscriptionEndpoint: 'Zenith-APIM'
   apimServiceName: 'linda'
   resourceGroupName: 'ochemMachine'
-  apiSpecPath: 'edustipenddoc.json'
-  azureSubscriptionEndpoint: 'Zenith-APIM'
-  nodeVersion: '14.x'
+  apiSpecPath: 'path/to/edustipend.json' # Adjust the path to your Swagger file
 
 jobs:
 - job: DeployToAPIM
-  displayName: 'Deploy Node.js API to APIM'
+  displayName: 'Deploy to Azure API Management'
   steps:
+  - task: UseNode@2
+    inputs:
+      versionSpec: '14.x'
+      checkLatest: true
 
   - script: |
-      # Install dependencies and build your Node.js API
       npm install
-    workingDirectory: '/home/vsts/work/1/s/edustipenddoc.json'
+      # Add additional commands here for building or preparing your Node.js API
 
   - task: AzureCLI@2
     inputs:
