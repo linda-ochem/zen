@@ -30,5 +30,5 @@ jobs:
       scriptLocation: 'inlineScript'
       inlineScript: |
         az extension add --name azure-cli-iot-ext
-        az apim api import --service $(apimServiceName) --resource-group $(resourceGroupName) --path $(apiSpecPath)
+        az apim api import --service-name $(apimServiceName) --resource-group $(resourceGroupName) --path $(apiSpecPath)
     displayName: 'Deploy API to APIM'
