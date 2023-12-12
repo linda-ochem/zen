@@ -7,7 +7,7 @@ pool:
 variables:
   apimServiceName: 'linda'
   resourceGroupName: 'ochemMachine'
-  apiSpecPath: '\edustipenddoc.json'
+  apiSpecPath: '/edustipenddoc.json'
   azureSubscriptionEndpoint: 'Zenith-APIM'
   nodeVersion: '14.x'
 
