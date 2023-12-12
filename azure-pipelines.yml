@@ -7,7 +7,7 @@ pool:
 variables:
   apimServiceName: 'linda'
   resourceGroupName: 'ochemMachine'
-  apiSpecPath: '/edustipenddoc.json'
+  apiSpecPath: 'edustipenddoc.json'
   azureSubscriptionEndpoint: 'Zenith-APIM'
   nodeVersion: '14.x'
 
@@ -19,7 +19,7 @@ jobs:
   - script: |
       # Install dependencies and build your Node.js API
       npm install
-    workingDirectory: '\edustipenddoc.json'
+    workingDirectory: 'edustipenddoc.json'
 
   - task: AzureCLI@2
     inputs:
