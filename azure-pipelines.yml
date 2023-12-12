@@ -1,0 +1,32 @@
+trigger:
+- dev
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  apimServiceName: 'linda'
+  resourceGroupName: 'ochemMachine'
+  apiSpecPath: '\edustipenddoc.json'
+  azureSubscriptionEndpoint: 'Zenith-APIM'
+  nodeVersion: '14.x'
+
+jobs:
+- job: DeployToAPIM
+  displayName: 'Deploy Node.js API to APIM'
+  steps:
+
+  - script: |
+      # Install dependencies and build your Node.js API
+      npm install
+    workingDirectory: '\edustipenddoc.json'
+
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: $(azureSubscriptionEndpoint)
+      scriptType: 'bash'
+      scriptLocation: 'inlineScript'
+      inlineScript: |
+        az extension add --name azure-cli-iot-ext
+        az apim api import --service $(apimServiceName) --resource-group $(resourceGroupName) --path $(apiSpecPath)
+    displayName: 'Deploy API to APIM'
