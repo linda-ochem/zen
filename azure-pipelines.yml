@@ -8,15 +8,15 @@ variables:
   azureSubscriptionEndpoint: 'Zenith-APIM'
   apimServiceName: 'linda'
   resourceGroupName: 'ochemMachine'
-  apiSpecPath: 'path/to/edustipend.json' # Adjust the path to your Swagger file
+  apiSpecPath: '/edustipend.json' # Adjust the path to your Swagger file
 
 jobs:
 - job: DeployToAPIM
   displayName: 'Deploy to Azure API Management'
   steps:
-  - task: UseNode@2
+  - task: UseNode@1
     inputs:
-      versionSpec: '14.x'
+      version: '14.x'
       checkLatest: true
 
   - script: |
