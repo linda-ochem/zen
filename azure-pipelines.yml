@@ -19,7 +19,7 @@ jobs:
   - script: |
       # Install dependencies and build your Node.js API
       npm install
-    workingDirectory: 'edustipenddoc.json'
+    workingDirectory: '/home/vsts/work/1/s/edustipenddoc.json'
 
   - task: AzureCLI@2
     inputs:
