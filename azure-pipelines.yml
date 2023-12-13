@@ -8,7 +8,7 @@ variables:
   azureSubscriptionEndpoint: 'Zenith-APIM'
   apimServiceName: 'linda'
   resourceGroupName: 'ochemMachine'
-  apiSpecPath: '/edustipenddoc.json'
+  apiSpecPath: 'edustipend-api\edustipenddoc.json'
 
 jobs:
 - job: DeployToAPIM
